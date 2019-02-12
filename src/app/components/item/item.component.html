@@ -1,0 +1,20 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <p class="card-text">{{task.title}}</p>
+    <p class="card-text">{{task.description}}</p>
+    <button
+      class="btn btn-danger mr-5"
+      (click)="deleteOneTask()">Delete
+    </button>
+    <button
+      class="btn btn-primary"
+      (click)="doneOneTask()"
+      *ngIf="task.status === 'undone'">Done
+    </button>
+    <button
+      class="btn btn-primary"
+      (click)="doneOneTask()"
+      *ngIf="task.status === 'done'">Undone
+    </button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="row justify-content-center mt-2">
+  <button type="button"
+          class="btn btn-dark text-uppercase mr-1"
+          (click)="sortTodoList()"
+          [disabled]="isDone">done
+  </button>
+  <button type="button"
+          class="btn btn-dark text-uppercase ml-1"
+          (click)="sortTodoList()"
+          [disabled]="!isDone">not done
+  </button>
+</div>
+
+<app-item
+  *ngFor="let todo of tasks | sort: todoItemStatus; trackBy: identify;"
+  [task]="todo"
+  (delete)="deleteTask($event)"
+  (done)="doneTask($event)">
+</app-item>

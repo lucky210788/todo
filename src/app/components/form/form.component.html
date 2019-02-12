@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-body">
+    <form #form="ngForm"
+          novalidate
+          (ngSubmit)="addTask()">
+      <div class="form-group">
+        <label for="text">Title</label>
+        <input type="text"
+               class="form-control"
+               id="text"
+               name="title"
+               [(ngModel)]="title"
+               #taskTitle="ngModel"
+               required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text"
+               class="form-control"
+               id="description"
+               name="description"
+               [(ngModel)]="description"
+               #taskDescriptione="ngModel"
+               required>
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="taskTitle.touched && taskTitle.invalid && form.submitted"><p class="mb-0">Title required</p>
+      </div>
+      <button class="btn btn-primary mr-5"
+              [disabled]="taskTitle.invalid">Add task
+      </button>
+    </form>
+  </div>
+</div>
