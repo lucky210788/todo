@@ -24,10 +24,15 @@
                required>
       </div>
       <div class="alert alert-danger"
-           *ngIf="taskTitle.touched && taskTitle.invalid && form.submitted"><p class="mb-0">Title required</p>
+           *ngIf="taskTitle.touched && taskTitle.invalid && form.submitted">
+        <p class="mb-0">Title required</p>
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="taskDescriptione.touched && taskDescriptione.invalid && form.submitted">
+        <p class="mb-0">Description required</p>
       </div>
       <button class="btn btn-primary mr-5"
-              [disabled]="taskTitle.invalid">Add task
+              [disabled]="taskTitle.invalid || taskDescriptione.invalid">Add task
       </button>
     </form>
   </div>

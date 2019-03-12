@@ -35,6 +35,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit() {
     this.authService.registration(this.registrationFormGroup.value).subscribe((data) => {
       if (data) {
+        alert('Congratulations you are registered');
         this.router.navigate(['/login']);
       }
     }, error => {
